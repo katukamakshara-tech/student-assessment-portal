@@ -1,0 +1,95 @@
+
+print("WELCOME TO AcheiversIT")
+students=[
+{
+    "studentid":"akshara@26",
+    "studentpassword":"aks#2004"
+},
+{
+    "studentid":"vicky@26",
+    "studentpassword":"vic#2003"
+},
+{
+    "studentid":"prashanth@26",
+    "studentpassword":"pra#2004"
+}]
+while True:
+    print('''
+          WELCOME TO STUDENT PORTAL
+          1.sign-in
+          2.sign-up
+          ''')
+    choose=int(input("enter your choice: "))
+    if choose==1:
+        id=input("enter your student id: ")
+        password=input("enter your password: ")
+        for i in students:
+            if id==i["studentid"] and password==i["studentpassword"]:
+                print ("HELLO {} WELCOME!! LOGIN SUCCESSFULLY!!!".format(id))
+                print('''WELCOME
+                      MENU:
+                      1.HOME
+                      2.COURSES
+                      3.QUIZ CATEGORIES
+                      4.TESTS
+                      5.PERFORMACE REPORT
+                      ''')
+                choose=int(input("enter your choice: "))
+                if choose==1:
+                    print('''
+                          WELCOME
+                        ''')
+                elif choose==2:
+                    print('''
+                          your courses:
+                          1.Data analytics
+                          2.Java full stack
+                          3.Python full stack
+                          ''')
+                    course_choice=int(input("select your course: "))
+                    if course_choice==1:
+                        print("WELCOME TO DATA ANALYTICS COURSE")
+                    elif course_choice==2:
+                        print("WELCOME TO JAVA FULL STACK")
+                    else:
+                        print("WELCOME TO PYTHON FULL STACK COURSE")
+                                
+                elif choose==3:
+                    print('''
+                         QUIZ CATEGORIES:
+                          1.BASED ON DAILY TOPICS
+                          2.BASED ON WEEKLY TOPICS
+                          3.BASED ON MONTHLY TOPICS
+                          ''')    
+                    quiz_cat=int(input("enter your quiz_cat:"))
+                    if quiz_cat==1:
+                        print("you are ready to take test based on daily topics")
+                    elif quiz_cat==2:
+                        print("you are ready to take test based on weekly topics")
+                    else :
+                        print("you are ready to take test on monthly topics")      
+                elif choose==4:
+                    print("your test is started....")
+                elif choose==5:
+                    print("here is your performance report.....")   
+                    score=int(input("enter your score: "))
+                    if 20<=score<=50:
+                        print("DO HARDWORK FOR IMPROVEMENT")
+                    elif 51<=score<=70:
+                        print("GOOD....BUT IT CAN BE BETTER IF YOU TRY")
+                    elif 71<=score<=90:
+                        print(" BETTER ...BUT IT CAN BE BEST IF YOU TRY")
+                    else:
+                        print("WELL DONE....")    
+    elif choose==2:
+        id=input("create student id: ")
+        password=input("create student password: ")
+        
+        student={}
+        student["student id"]=id
+        student["student password"]=password
+        students.append(student)
+    else:
+        print("EXIT")
+                    
+
