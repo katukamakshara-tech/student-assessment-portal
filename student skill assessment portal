@@ -1,94 +1,183 @@
 
 print("WELCOME TO AcheiversIT")
-students=[
-{
-    "studentid":"akshara@26",
-    "studentpassword":"aks#2004"
-},
-{
-    "studentid":"vicky@26",
-    "studentpassword":"vic#2003"
-},
-{
-    "studentid":"prashanth@26",
-    "studentpassword":"pra#2004"
-}]
+
+students = [
+    {
+        "studentid": "akshara@26",
+        "studentpassword": "aks#2004"
+    },
+    {
+        "studentid": "vicky@26",
+        "studentpassword": "vic#2003"
+    },
+    {
+        "studentid": "prashanth@26",
+        "studentpassword": "pra#2004"
+    }
+]
+
 while True:
     print('''
           WELCOME TO STUDENT PORTAL
           1.sign-in
           2.sign-up
           ''')
-    choose=int(input("enter your choice: "))
-    if choose==1:
-        id=input("enter your student id: ")
-        password=input("enter your password: ")
+
+    choose = int(input("enter your choice: "))
+
+    if choose == 1:
+        id = input("enter your student id: ")
+        password = input("enter your password: ")
+
         for i in students:
-            if id==i["studentid"] and password==i["studentpassword"]:
-                print ("HELLO {} WELCOME!! LOGIN SUCCESSFULLY!!!".format(id))
-                print('''WELCOME
-                      MENU:
+            if id == i["studentid"] and password == i["studentpassword"]:
+
+                print("HELLO {} WELCOME!! LOGIN SUCCESSFULLY!!!".format(id))
+
+                while True:
+                    print('''
+                      MENU
                       1.HOME
                       2.COURSES
                       3.QUIZ CATEGORIES
-                      4.TESTS
-                      5.PERFORMACE REPORT
+                      4.TESTS AND PERFORMANCE REPORT
+                      5.LOGOUT
                       ''')
-                choose=int(input("enter your choice: "))
-                if choose==1:
-                    print('''
+
+                    choose = int(input("enter your choice: "))
+
+                    if choose == 1:
+                        print('''
                           WELCOME
                         ''')
-                elif choose==2:
-                    print('''
+
+                    elif choose == 2:
+                        print('''
                           your courses:
                           1.Data analytics
                           2.Java full stack
                           3.Python full stack
                           ''')
-                    course_choice=int(input("select your course: "))
-                    if course_choice==1:
-                        print("WELCOME TO DATA ANALYTICS COURSE")
-                    elif course_choice==2:
-                        print("WELCOME TO JAVA FULL STACK")
-                    else:
-                        print("WELCOME TO PYTHON FULL STACK COURSE")
-                                
-                elif choose==3:
-                    print('''
+
+                        course_choice = int(input("select your course: "))
+
+                        if course_choice == 1:
+                            print('''
+WELCOME TO DATA ANALYTICS COURSE
+Contents:
+-python
+-SQL
+-powerbi
+-excel
+''')
+
+                        elif course_choice == 2:
+                            print('''
+WELCOME TO JAVA FULL STACK
+contents:
+-core java
+-spring boot
+-Frontend with angular/React
+-Tools and deployment
+''')
+
+                        else:
+                            print('''
+WELCOME TO PYTHON FULL STACK COURSE
+contents:
+-core python
+-Django
+-Flask
+-REST API
+''')
+
+                    elif choose == 3:
+                        print('''
                          QUIZ CATEGORIES:
-                          1.BASED ON DAILY TOPICS
-                          2.BASED ON WEEKLY TOPICS
-                          3.BASED ON MONTHLY TOPICS
-                          ''')    
-                    quiz_cat=int(input("enter your quiz_cat:"))
-                    if quiz_cat==1:
-                        print("you are ready to take test based on daily topics")
-                    elif quiz_cat==2:
-                        print("you are ready to take test based on weekly topics")
-                    else :
-                        print("you are ready to take test on monthly topics")      
-                elif choose==4:
-                    print("your test is started....")
-                elif choose==5:
-                    print("here is your performance report.....")   
-                    score=int(input("enter your score: "))
-                    if 20<=score<=50:
-                        print("DO HARDWORK FOR IMPROVEMENT")
-                    elif 51<=score<=70:
-                        print("GOOD....BUT IT CAN BE BETTER IF YOU TRY")
-                    elif 71<=score<=90:
-                        print(" BETTER ...BUT IT CAN BE BEST IF YOU TRY")
+                         1.BASED ON DAILY TOPICS
+                         2.BASED ON WEEKLY TOPICS
+                         3.BASED ON MONTHLY TOPICS
+                         ''')
+
+                    elif choose== 4:
+                        print("your test is started...")
+                        quiz_cat = int(input("enter your quiz_cat: "))
+                        score = 0
+
+                        if quiz_cat == 1:
+                            print("Daily Topic Quiz")
+
+                            q1 = input("1. What keyword is used to define a function in Python? ")
+                            if q1.lower() == "def":
+                                score += 30
+
+                            q2 = input("2. Which function is used for output in Python? ")
+                            if q2.lower() == "print":
+                                score += 30
+
+                            q3 = input("3. Which loop is used to iterate over a sequence? ")
+                            if q3.lower() == "for":
+                                score += 30
+
+                        elif quiz_cat == 2:
+                            print("Weekly Topic Quiz")
+
+                            q1 = input("1. What does OOP stand for? ")
+                            if q1.lower() == "object oriented programming":
+                                score += 30
+
+                            q2 = input("2. What is used to create an object? ")
+                            if q2.lower() == "class":
+                                score += 30
+
+                            q3 = input("3. What feature allows reusing code? ")
+                            if q3.lower() == "inheritance":
+                                score += 30
+
+                        else:
+                            print("Monthly Topic Quiz")
+
+                            q1 = input("1. What does SQL stand for? ")
+                            if q1.lower() == "structured query language":
+                                score += 30
+
+                            q2 = input("2. Which command is used to display records? ")
+                            if q2.lower() == "select":
+                                score += 30
+
+                            q3 = input("3. Which key uniquely identifies a record? ")
+                            if q3.lower() == "primary key":
+                                score += 30
+
+                        print("Your score is:", score)
+
+                        if 20 <= score <= 50:
+                            print("DO HARDWORK FOR IMPROVEMENT")
+
+                        elif 51 <= score <= 70:
+                            print("GOOD....BUT IT CAN BE BETTER IF YOU TRY")
+
+                        elif 71 <= score <= 90:
+                            print("BETTER ...BUT IT CAN BE BEST IF YOU TRY")
+
+                        else:
+                            print("WELL DONE....")
+                            break
+
+                    
                     else:
-                        print("WELL DONE....")    
-    elif choose==2:
-        id=input("create student id: ")
-        password=input("create student password: ")
-        
-        student={}
-        student["student id"]=id
-        student["student password"]=password
+                        print("Logout")
+
+    elif choose == 2:
+        id = input("create student id: ")
+        password = input("create student password: ")
+
+        student = {}
+        student["studentid"] = id
+        student["studentpassword"] = password
+
         students.append(student)
+
     else:
         print("EXIT")
                     
